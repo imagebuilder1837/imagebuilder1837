@@ -28,7 +28,7 @@
 - `docs/spec.md`：持久化行为规格。过长时按领域拆分至 `docs/spec/`，本文件留做链接跳转。
 - `docs/external/`：依赖的外部系统的调查事实。其他调查事实默认存放至临时目录。
 
-## Skills
+## Skills 与 Subagents
 
 执行以下 skill 时：
 
@@ -36,6 +36,6 @@
 - `/to-spec`：在用户明确指定时可以包含具体文件路径及代码片段。
 - `/implement-spec`：
   - 优先在主代理中使用确定性命令合并，仅在出现语义冲突时调用合并子代理。
-  - 确定子代理角色前先 list capabilities。
   - 保存子代理 handoff 路径，交付时用 worktree.discard。
-- `/code-review`：reviewer 无 shell 权限，向其交付 diff 产物而非命令。
+
+调用子代理时：确定角色并分派前先 list capabilities。
